@@ -1,7 +1,24 @@
+import { useRouter } from "next/router"
+// Challenge PRODUCT_DATA filled by users
 const Home = () => {
+    const PRODUCT_DATA = {
+        color: "red",
+        value: 100
+    }
+
+    const router = useRouter();
+
+    const productPage = () => {
+        router.push({
+            pathname: '/product/123',
+            query: PRODUCT_DATA
+        });
+    }
+
     return (
         <div>
             <h1>Hello World!</h1>
+            <button onClick={productPage}>Got to Products</button>
         </div>
     )
 }
