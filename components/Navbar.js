@@ -5,12 +5,12 @@ const Navbar = () => {
     <nav>
       <ul>
         <li>
-          <Link href="/">       
+          <Link href="/" prefetch={false}>       
             <a >Home</a>
           </Link>
         </li>
         <li>
-            <Link href="/about">
+            <Link href="/about" prefetch={false}>
                 <a>About</a>
             </Link>
         </li>

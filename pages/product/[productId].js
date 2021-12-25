@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const ProductItem = () => {
@@ -12,9 +13,10 @@ const ProductItem = () => {
 
     //Funcion para regresar a la Home page
     
-    const backHome = () => {
-        router.push('/')
-    }
+    // const backHome = () => {
+    //     router.push('/')
+    // }
+
     return (
         <div>
             <p>Este es el id del producto solicitado: {productId} </p>
@@ -22,7 +24,10 @@ const ProductItem = () => {
                 <li> Color: {color} </li>
                 <li> Valor: ${value} </li>
             </ul>
-            <button onClick={backHome}>Back to Home page</button>
+            <Link href="/" prefetch={false}>
+                <a>Back to Home</a>
+            </Link>
+            {/* <button onClick={backHome}>Back to Home page</button> */}
         </div>
     )
 }

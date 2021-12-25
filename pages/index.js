@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router"
 import Navbar from "../components/Navbar";
 // Challenge PRODUCT_DATA filled by users
@@ -20,7 +21,7 @@ const Home = () => {
         <div>
             <Navbar/>
             <h1>Hello World!</h1>
-            <button onClick={productPage}>Got to Products</button>
+                <button onClick={productPage}>Products</button>
         </div>
     )
 }
