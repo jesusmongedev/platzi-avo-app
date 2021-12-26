@@ -1,27 +1,28 @@
-import Link from "next/link";
-import { useRouter } from "next/router"
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 // Challenge PRODUCT_DATA filled by users
 const Home = () => {
-    const PRODUCT_DATA = {
-        color: "red",
-        value: 100
-    }
 
-    const router = useRouter();
+    const [productList, setProductList] = useState([]);
 
-    const productPage = () => {
-        router.push({
-            pathname: '/product/123',
-            query: PRODUCT_DATA
-        });
-    }
+    useEffect(() => {
+        window.fetch('/api/avo')
+        .then((res) => res.json())
+        .then(({data, length}) => {
+            setProductList(data)
+            console.log(data)
+        })
+    }, [])
 
     return (
         <div>
             <Navbar/>
             <h1>Hello World!</h1>
-                <button onClick={productPage}>Products</button>
+            {productList.map((product) => (
+                <>
+                    <div key={product.id}>{product.name}</div>
+                </>
+            ))}
         </div>
     )
 }
