@@ -1,6 +1,6 @@
 import DB from '../../../database/db'
 
-const allAvos = async (request, res) => {
+const Avo = async (request, res) => {
 
     const id = request.query.id
 
@@ -10,4 +10,4 @@ const allAvos = async (request, res) => {
     res.status(200).json({ data: avo });
 }
 
-export default allAvos
+export default Avo
