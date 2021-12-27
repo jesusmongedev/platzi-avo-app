@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react/cjs/react.development";
 import { useRouter } from "next/router";
-import Navbar from "../../components/Navbar";
 
 const ProductPage = () => {
   const [product, setProduct] = useState();
-
-  // console.log(product)
 
   const {
     query: { id },
@@ -21,7 +18,6 @@ const ProductPage = () => {
         })
         .catch((err) => console.log(err.message));
   }, [id]);
-
 
   return (
     <>
