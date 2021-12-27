@@ -1,5 +1,5 @@
-import App from "next/app";
-import Layout from "../components/Layout";
+// import App from "next/app";
+import Layout from "@components/Layout";
 
 function MyApp({ Component, pageProps }) {
   //.Casos de uso

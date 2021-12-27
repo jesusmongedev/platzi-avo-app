@@ -1,13 +1,12 @@
-import DB from '../../../database/db'
+import DB from "@database";
 
 const Avo = async (request, res) => {
+  const id = request.query.id;
 
-    const id = request.query.id
+  const db = new DB();
+  const avo = await db.getById(id);
 
-    const db = new DB()
-    const avo = await db.getById(id)
+  res.status(200).json({ data: avo });
+};
 
-    res.status(200).json({ data: avo });
-}
-
-export default Avo
+export default Avo;
