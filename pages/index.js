@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 // Challenge PRODUCT_DATA filled by users
 const Home = () => {
   const [productList, setProductList] = useState([]);
@@ -20,11 +19,10 @@ const Home = () => {
       <Head>
         <title>Platzi-Avo 🥑</title>
       </Head>
-      <Navbar />
       <h1>Hello World!</h1>
       {productList.map((product) => (
         <>
-          <div key={product.id}>{product.name}</div>
+          <p key={product.id}>{product?.name}</p>
         </>
       ))}
     </div>
