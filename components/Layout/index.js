@@ -2,7 +2,7 @@ import Navbar from "@components/Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="container">
       <Navbar />
       {children}
       <footer>
