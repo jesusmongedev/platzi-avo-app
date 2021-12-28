@@ -1,8 +1,10 @@
 import Navbar from "@components/Navbar";
+import React, { memo } from "react";
+import styles from "@components/Layout/style.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Navbar />
       {children}
       <footer>
