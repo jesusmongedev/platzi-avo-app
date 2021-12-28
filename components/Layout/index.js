@@ -1,21 +1,14 @@
 import Navbar from "@components/Navbar";
-import React, { memo } from "react";
+import styles from "@components/Layout/style.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
       {children}
-      <footer>
+      <footer className={styles.footer}>
         <h3>This is the footer</h3>
       </footer>
-      <style jsx>
-        {`
-          div {
-            background: lightyellow;
-          }
-        `}
-      </style>
     </div>
   );
 };

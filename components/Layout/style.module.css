@@ -1,3 +1,7 @@
 .container {
   background: lightgreen;
 }
+.footer {
+  text-align: center;
+  background: lightsalmon;
+}
