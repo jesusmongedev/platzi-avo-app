@@ -1,0 +1,7 @@
+.header {
+  background: whitesmoke;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}

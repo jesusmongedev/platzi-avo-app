@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Platzi-Avo 🥑</title>
       </Head>
@@ -25,7 +25,7 @@ const Home = () => {
           <p key={product.id}>{product?.name}</p>
         </>
       ))}
-    </div>
+    </>
   );
 };
 

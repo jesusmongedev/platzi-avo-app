@@ -1,21 +1,23 @@
 import Link from "next/link";
+import styles from "@components/Navbar/style.module.css";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link href="/" prefetch={false}>       
-            <a >Home</a>
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <div>
+          <Link href="/" prefetch={false}>
+            <a>🥑 Avo Store</a>
           </Link>
-        </li>
-        <li>
-            <Link href="/about" prefetch={false}>
-                <a>About</a>
-            </Link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+
+        <div>
+          <Link href="/about" prefetch={false}>
+            <a>🧺 Canasta (0) </a>
+          </Link>
+        </div>
+      </nav>
+    </header>
   );
 };
 

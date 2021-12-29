@@ -3,13 +3,13 @@ import styles from "@components/Layout/style.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className={styles.container}>
+    <>
       <Navbar />
       {children}
       <footer className={styles.footer}>
         <h3>This is the footer</h3>
       </footer>
-    </div>
+    </>
   );
 };
 
