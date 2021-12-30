@@ -1,7 +1,27 @@
 .header {
-  background: whitesmoke;
+  background: #fff;
+  border: 2px solid rgb(241, 241, 241);
+  border-radius: 2px;
 }
 .nav {
+  margin: 0 auto;
+  max-width: 700px;
   display: flex;
   justify-content: space-between;
+}
+.home,
+.basket {
+  cursor: pointer;
+  padding: 15px 20px;
+}
+.basket:hover {
+  background: rgb(241, 241, 241);
+}
+.home a,
+.basket a {
+  text-decoration: none;
+  color: black;
+}
+.home {
+  background: rgb(241, 241, 241);
 }

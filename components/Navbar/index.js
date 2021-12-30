@@ -5,13 +5,13 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div>
+        <div className={styles.home}>
           <Link href="/" prefetch={false}>
             <a>🥑 Avo Store</a>
           </Link>
         </div>
 
-        <div>
+        <div className={styles.basket}>
           <Link href="/about" prefetch={false}>
             <a>🧺 Canasta (0) </a>
           </Link>
