@@ -5,11 +5,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children}
-      {/* Footer Component  */}
-      <footer className={styles.footer}>
-        <h3>This is the footer</h3>
-      </footer>
+      <div className={styles.container}>
+        {children}
+        <footer className={styles.footer}>
+          <h3>This is the footer</h3>
+        </footer>
+      </div>
     </>
   );
 };

@@ -5,3 +5,7 @@
 .header h1 {
   margin-bottom: 20px;
 }
+.header a {
+  color: #4183c4;
+  text-decoration: none;
+}

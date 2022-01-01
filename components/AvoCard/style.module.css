@@ -1,0 +1,21 @@
+.avosContainer {
+  padding: 0 14px;
+}
+.avoCard {
+  border: 2px solid rgb(226, 226, 226);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+.avoInfo {
+  border-top: 8px solid rgb(235, 235, 235);
+  padding: 10px 20px;
+}
+.avoInfo h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+.avoInfo p {
+  font-size: 1rem;
+  margin: inherit;
+}

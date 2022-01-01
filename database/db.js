@@ -1,4 +1,4 @@
-import allData from './data'
+import allData from "./data";
 
 class Database {
   constructor() {}
@@ -6,14 +6,14 @@ class Database {
   getAll() {
     return new Promise(async (resolve, reject) => {
       try {
-        const asArray = Object.values(allData)
-        console.log('allDATA:', asArray)
-        await randomDelay()
-        resolve(asArray)
+        const asArray = Object.values(allData);
+        // console.log('allDATA:', asArray)
+        await randomDelay();
+        resolve(asArray);
       } catch (error) {
-        reject(error)
+        reject(error);
       }
-    })
+    });
   }
 
   getById(id) {
@@ -21,23 +21,23 @@ class Database {
       try {
         const avocade = Object.values(allData).find(
           (avocade) => avocade.id === id
-        )
-        await randomDelay()
-        resolve(avocade)
+        );
+        await randomDelay();
+        resolve(avocade);
       } catch (error) {
-        reject(error)
+        reject(error);
       }
-    })
+    });
   }
 }
 
 const randomDelay = () =>
   new Promise((resolve) => {
-    const max = 350
-    const min = 100
-    const delay = Math.floor(Math.random() * (max - min + 1)) + min
+    const max = 350;
+    const min = 100;
+    const delay = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    setTimeout(resolve, delay)
-  })
+    setTimeout(resolve, delay);
+  });
 
-export default Database
+export default Database;

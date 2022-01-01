@@ -1,6 +1,6 @@
 // import App from "next/app";
 import Layout from "@components/Layout";
-import "../index-css/index.css";
+import "../css/normalize.css";
 
 function MyApp({ Component, pageProps }) {
   //.Casos de uso

@@ -1,3 +1,4 @@
+import AvoCard from "@components/AvoCard";
 import Header from "@components/Header";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -11,7 +12,7 @@ const Home = () => {
       .then((res) => res.json())
       .then(({ data, length }) => {
         setProductList(data);
-        console.log(data);
+        // console.log(data);
       });
   }, []);
 
@@ -21,12 +22,7 @@ const Home = () => {
         <title>Platzi-Avo 🥑</title>
       </Head>
       <Header />
-      {/* Product List */}
-      {productList.map((product) => (
-        <>
-          <p key={product.id}>{product?.name}</p>
-        </>
-      ))}
+      <AvoCard avos={productList} />
     </>
   );
 };
