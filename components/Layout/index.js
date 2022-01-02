@@ -1,5 +1,6 @@
 import Navbar from "@components/Navbar";
 import styles from "@components/Layout/style.module.css";
+import Footer from "@components/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -7,9 +8,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <div className={styles.container}>
         {children}
-        <footer className={styles.footer}>
-          <h3>This is the footer</h3>
-        </footer>
+        <Footer />
       </div>
     </>
   );

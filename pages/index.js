@@ -2,7 +2,7 @@ import AvoCard from "@components/AvoCard";
 import Header from "@components/Header";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-// Challenge PRODUCT_DATA filled by users
+
 const Home = () => {
   const [productList, setProductList] = useState([]);
 
