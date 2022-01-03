@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react/cjs/react.development";
 import { useRouter } from "next/router";
+import AvoDetails from "@components/AvoDetails";
 
 const ProductPage = () => {
   const [product, setProduct] = useState();
@@ -19,13 +20,7 @@ const ProductPage = () => {
         .catch((err) => console.log(err.message));
   }, [id]);
 
-  return (
-    <>
-      <h2>{product?.name}</h2>
-      <p>{product?.attributes.description}</p>
-      <span>{product?.image}</span>
-    </>
-  );
+  return <>{product && <AvoDetails avos={product} />}</>;
 };
 
 export default ProductPage;

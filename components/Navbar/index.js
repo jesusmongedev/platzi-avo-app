@@ -6,13 +6,13 @@ const Navbar = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.home}>
-          <Link href="/" prefetch={false}>
+          <Link href="/">
             <a>🥑 Avo Store</a>
           </Link>
         </div>
 
         <div className={styles.basket}>
-          <Link href="/about" prefetch={false}>
+          <Link href="/about">
             <a>🧺 Canasta (0) </a>
           </Link>
         </div>
