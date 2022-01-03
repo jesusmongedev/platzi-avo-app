@@ -1,0 +1,36 @@
+.avoDetailContainer {
+  padding: 0 14px;
+}
+.avoPrice {
+  margin-bottom: 0;
+}
+.avoBarCode {
+  padding: 0.3em 0.6em;
+  background: #e8e8e8;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  line-height: 4;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
+}
+.avoAddCart {
+  display: flex;
+}
+.avoAddCart input,
+.avoAddCart button {
+  padding: 4px 8px;
+  border: none;
+}
+.avoAddCart input {
+  border: 1px solid #e8e8e8;
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+.avoAddCart button {
+  border-radius: 0 0.3rem 0.3rem 0;
+  color: white;
+  background-color: #16ab39;
+  cursor: pointer;
+}
+.avoAddCart button:hover {
+  background-color: #159232;
+}

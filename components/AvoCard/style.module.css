@@ -3,8 +3,13 @@
 }
 .avoCard {
   border: 2px solid rgb(226, 226, 226);
-  border-radius: 2px;
+  border-radius: 6px;
   margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.avoCard:hover {
+  transform: translateY(-2px);
 }
 .avoInfo {
   border-top: 8px solid rgb(235, 235, 235);

@@ -5,17 +5,17 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.home}>
-          <Link href="/">
+        <Link href="/">
+          <div className={styles.home}>
             <a>🥑 Avo Store</a>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
-        <div className={styles.basket}>
-          <Link href="/about">
+        <Link href="/about">
+          <div className={styles.basket}>
             <a>🧺 Canasta (0) </a>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </nav>
     </header>
   );
