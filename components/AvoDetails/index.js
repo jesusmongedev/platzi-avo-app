@@ -1,3 +1,4 @@
+import AvoAttribute from "@components/AvoAttributes";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./styles.module.css";
@@ -38,8 +39,9 @@ const AvoDetails = ({ avos }) => {
       </form>
       <div>
         <h3>About this avocado</h3>
-        <p>{avos?.attributes.description}</p>
+        <p className={styles.borderBottom}>{avos?.attributes.description}</p>
       </div>
+      <AvoAttribute avoAttributes={avos} />
     </div>
   );
 };

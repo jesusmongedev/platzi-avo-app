@@ -1,0 +1,16 @@
+.attributesContainer {
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+}
+.attributesContainer > div {
+  padding: 20px 12px;
+}
+.attributesContainer div:first-child h4 {
+  margin: 0;
+}
+.attributesContainer div:nth-child(n + 2) h4 {
+  margin: 0 0 18px 0;
+}
+.borderBottom {
+  border-bottom: 1px solid #e8e8e8;
+}
