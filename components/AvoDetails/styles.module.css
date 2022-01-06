@@ -16,7 +16,7 @@
 .avoAddCart {
   display: flex;
 }
-.avoAddCart input,
+/* .avoAddCart input,
 .avoAddCart button {
   padding: 4px 8px;
   border: none;
@@ -33,7 +33,7 @@
 }
 .avoAddCart button:hover {
   background-color: #159232;
-}
+} */
 .borderBottom {
   padding-bottom: 15px;
   border-bottom: 1px solid #e8e8e8;

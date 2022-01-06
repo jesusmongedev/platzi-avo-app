@@ -1,7 +1,10 @@
 import Link from "next/link";
 import styles from "@components/Navbar/style.module.css";
+import { useCart } from "@store/Cart";
 
 const Navbar = () => {
+  const { count: cartCount } = useCart();
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -11,9 +14,9 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <Link href="/about">
+        <Link href="/cart">
           <div className={styles.basket}>
-            <a>🧺 Canasta (0) </a>
+            <a>🧺 Canasta ({cartCount}) </a>
           </div>
         </Link>
       </nav>
