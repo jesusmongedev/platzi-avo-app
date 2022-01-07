@@ -13,27 +13,9 @@
   font-weight: 700;
   color: rgba(0, 0, 0, 0.6);
 }
-.avoAddCart {
-  display: flex;
+.avoDetailContainer div > h3 {
+  margin-top: 30px;
 }
-/* .avoAddCart input,
-.avoAddCart button {
-  padding: 4px 8px;
-  border: none;
-}
-.avoAddCart input {
-  border: 1px solid #e8e8e8;
-  border-radius: 0.3rem 0 0 0.3rem;
-}
-.avoAddCart button {
-  border-radius: 0 0.3rem 0.3rem 0;
-  color: white;
-  background-color: #16ab39;
-  cursor: pointer;
-}
-.avoAddCart button:hover {
-  background-color: #159232;
-} */
 .borderBottom {
   padding-bottom: 15px;
   border-bottom: 1px solid #e8e8e8;

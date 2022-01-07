@@ -38,10 +38,7 @@ const AvoDetails = ({ avos }) => {
   };
   // Handle the Avocados added to the cart
   const handleAddAvo = (e) => {
-    // e.preventDefault();
-    // // alert(`${quantity} Avocados Added`);
-    // setQuantity(1);
-
+    e.preventDefault();
     const error = validate(quantity);
     setError(error);
 
@@ -63,31 +60,30 @@ const AvoDetails = ({ avos }) => {
   };
 
   return (
-    <div className={styles.avoDetailContainer}>
+    <main className={styles.avoDetailContainer}>
       <Image src={avos?.image} width={288} height={288} />
       <h2>{avos?.name}</h2>
       <p className={styles.avoPrice}>$ {avos?.price}</p>
       <span className={styles.avoBarCode}>SKU: {avos?.sku}</span>
-      {/* <form className={styles.avoAddCart}> */}
-      {/* Use a form to submit the number of avocados whe the user press enter */}
-      {/* useState to keep track of the users selection */}
-      <Input
-        type="number"
-        placeholder="Quantity"
-        value={quantity}
-        min={1}
-        step={1}
-        error={!!error}
-        onChange={handleNumberChange}
-        action={{
-          color: "green",
-          content: "Add to Cart",
-          Icon: "plus cart",
-          onClick: handleAddAvo,
-          loading,
-          disabled: loading,
-        }}
-      />
+      <form>
+        <Input
+          type="number"
+          placeholder="Quantity"
+          value={quantity}
+          min={1}
+          step={1}
+          error={!!error}
+          onChange={handleNumberChange}
+          action={{
+            color: "green",
+            content: "Add to Cart",
+            Icon: "plus cart",
+            onClick: handleAddAvo,
+            loading,
+            disabled: loading,
+          }}
+        />
+      </form>
       {/* <button type="submit" onClick={handleAddAvo}>
           Add to Cart
         </button> */}
@@ -106,7 +102,7 @@ const AvoDetails = ({ avos }) => {
         <p className={styles.borderBottom}>{avos?.attributes.description}</p>
       </div>
       <AvoAttribute avoAttributes={avos} />
-    </div>
+    </main>
   );
 };
 

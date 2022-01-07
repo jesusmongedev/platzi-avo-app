@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 const AvoAttribute = ({ avoAttributes }) => {
   const { shape, hardiness, taste } = avoAttributes.attributes;
-  console.log(avoAttributes);
+  // console.log(avoAttributes);
   return (
     <div className={styles.attributesContainer}>
       <div className={styles.borderBottom}>
