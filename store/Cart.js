@@ -98,17 +98,17 @@ export const useCart = () => {
 export const useCartMutations = () => {
   const dispatch = useContext(CartDispatchContext);
 
-  const addToCart = (product, quantity) =>
+  const addToCart = (avos, quantity) =>
     dispatch({
       type: "add",
-      item: product,
+      item: avos,
       quantity,
     });
 
-  const removeFromCart = (product) =>
+  const removeFromCart = (avos) =>
     dispatch({
       type: "remove",
-      item: product,
+      item: avos,
     });
 
   return {

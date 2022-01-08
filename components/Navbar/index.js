@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "@components/Navbar/style.module.css";
-import { useCart } from "@store/Cart";
 import ShoppingCartIcon from "@components/ShoppingCartIcon";
-import { Menu, Container } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { Avocado } from "@components/SVGIcons";
+import { useCart } from "@store/Cart";
 
 const Navbar = () => {
   const { count: cartCount } = useCart();

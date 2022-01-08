@@ -33,12 +33,16 @@ const AvoDetails = ({ avos }) => {
   };
 
   // Handle Number of Avos
-  const handleNumberChange = (e) => {
-    setQuantity(e.target.value);
-  };
+  // const handleNumberChange = (e) => {
+  //   setQuantity(e.target.value);
+  // };
+  const handleChange = ({ target }) => setQuantity(parseInt(target.value, 10));
   // Handle the Avocados added to the cart
   const handleAddAvo = (e) => {
     e.preventDefault();
+    // setQuantity(quantity);
+    // setVisible(true);
+    // toggleMessage();
     const error = validate(quantity);
     setError(error);
 
@@ -73,7 +77,7 @@ const AvoDetails = ({ avos }) => {
           min={1}
           step={1}
           error={!!error}
-          onChange={handleNumberChange}
+          onChange={handleChange}
           action={{
             color: "green",
             content: "Add to Cart",
@@ -84,10 +88,6 @@ const AvoDetails = ({ avos }) => {
           }}
         />
       </form>
-      {/* <button type="submit" onClick={handleAddAvo}>
-          Add to Cart
-        </button> */}
-      {/* </form> */}
       {error && (
         <div style={{ color: "red", position: "absolute" }}>{error}</div>
       )}

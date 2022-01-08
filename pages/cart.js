@@ -6,6 +6,8 @@ const CartPage = () => {
   const { items, count } = useCart();
   const { removeFromCart } = useCartMutations();
 
+  console.log(items);
+
   return (
     <div>
       <Head>
