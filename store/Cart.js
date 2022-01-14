@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from "react";
+import React, { Dispatch, useContext, useReducer } from "react";
 
 const defaultState = {};
 
@@ -17,7 +17,7 @@ const CartProvider = ({ children }) => {
   );
 };
 
-function cartReducers({ item, type, quantity: qtyToAdd = 1 }) {
+function cartReducers(state, { item, type, quantity: qtyToAdd = 1 }) {
   const existingCartItem = state[item.id];
 
   switch (type) {
@@ -98,17 +98,17 @@ export const useCart = () => {
 export const useCartMutations = () => {
   const dispatch = useContext(CartDispatchContext);
 
-  const addToCart = (avos, quantity) =>
+  const addToCart = (product, quantity) =>
     dispatch({
       type: "add",
-      item: avos,
+      item: product,
       quantity,
     });
 
-  const removeFromCart = (avos) =>
+  const removeFromCart = (product) =>
     dispatch({
       type: "remove",
-      item: avos,
+      item: product,
     });
 
   return {

@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import { useCartMutations } from "@store/Cart";
 import { Input, Icon, Transition } from "semantic-ui-react";
+import Layout from "@components/Layout";
 
 // Fake a server Response, we don't care on this project
 // about data persistency, but you may add it :)
@@ -19,7 +20,7 @@ const validate = (quantity) => {
   return error;
 };
 
-const AvoDetails = ({ avos }) => {
+const AvoDetails = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -50,7 +51,7 @@ const AvoDetails = ({ avos }) => {
       setLoading(true);
       addToCartRequest()
         .then(() => {
-          addToCart(avos, quantity);
+          addToCart(product, quantity);
           setLoading(false);
           setQuantity(quantity);
           setVisible(true);
@@ -64,45 +65,49 @@ const AvoDetails = ({ avos }) => {
   };
 
   return (
-    <main className={styles.avoDetailContainer}>
-      <Image src={avos?.image} width={288} height={288} />
-      <h2>{avos?.name}</h2>
-      <p className={styles.avoPrice}>$ {avos?.price}</p>
-      <span className={styles.avoBarCode}>SKU: {avos?.sku}</span>
-      <form>
-        <Input
-          type="number"
-          placeholder="Quantity"
-          value={quantity}
-          min={1}
-          step={1}
-          error={!!error}
-          onChange={handleChange}
-          action={{
-            color: "green",
-            content: "Add to Cart",
-            Icon: "plus cart",
-            onClick: handleAddAvo,
-            loading,
-            disabled: loading,
-          }}
-        />
-      </form>
-      {error && (
-        <div style={{ color: "red", position: "absolute" }}>{error}</div>
-      )}
-      <Transition duration={{ hide: 500, show: 500 }} visible={visible}>
-        <div style={{ color: "green", position: "absolute" }}>
-          <Icon name="check" />
-          Added to cart
+    <Layout>
+      <main className={styles.avoDetailContainer}>
+        <Image src={product?.image} width={288} height={288} />
+        <h2>{product?.name}</h2>
+        <p className={styles.avoPrice}>$ {product?.price}</p>
+        <span className={styles.avoBarCode}>SKU: {product?.sku}</span>
+        <form>
+          <Input
+            type="number"
+            placeholder="Quantity"
+            value={quantity}
+            min={1}
+            step={1}
+            error={!!error}
+            onChange={handleChange}
+            action={{
+              color: "green",
+              content: "Add to Cart",
+              Icon: "plus cart",
+              onClick: handleAddAvo,
+              loading,
+              disabled: loading,
+            }}
+          />
+        </form>
+        {error && (
+          <div style={{ color: "red", position: "absolute" }}>{error}</div>
+        )}
+        <Transition duration={{ hide: 500, show: 500 }} visible={visible}>
+          <div style={{ color: "green", position: "absolute" }}>
+            <Icon name="check" />
+            Added to cart
+          </div>
+        </Transition>
+        <div>
+          <h3>About this avocado</h3>
+          <p className={styles.borderBottom}>
+            {product?.attributes.description}
+          </p>
         </div>
-      </Transition>
-      <div>
-        <h3>About this avocado</h3>
-        <p className={styles.borderBottom}>{avos?.attributes.description}</p>
-      </div>
-      <AvoAttribute avoAttributes={avos} />
-    </main>
+        <AvoAttribute avoAttributes={product} />
+      </main>
+    </Layout>
   );
 };
 

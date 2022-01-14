@@ -20,7 +20,7 @@ const ProductPage = () => {
         .catch((err) => console.log(err.message));
   }, [id]);
 
-  return <>{product && <AvoDetails avos={product} />}</>;
+  return <>{product && <AvoDetails product={product} />}</>;
 };
 
 export default ProductPage;

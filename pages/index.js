@@ -1,5 +1,6 @@
 import AvoCard from "@components/AvoCard";
 import Header from "@components/Header";
+import Layout from "@components/Layout";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
@@ -17,13 +18,13 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>Platzi-Avo 🥑</title>
       </Head>
       <Header />
       <AvoCard avos={productList} />
-    </>
+    </Layout>
   );
 };
 
