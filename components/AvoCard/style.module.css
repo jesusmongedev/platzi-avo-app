@@ -1,7 +1,16 @@
 .avosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0 14px;
 }
+@media screen and (min-width: 612px) {
+  .avosContainer {
+    gap: 1em;
+  }
+}
 .avoCard {
+  max-width: 333px;
   border: 2px solid rgb(226, 226, 226);
   border-radius: 6px;
   margin-bottom: 12px;

@@ -1,6 +1,13 @@
 import { Basket } from "@components/SVGIcons";
 
-const ShoppingCartIcon = ({ cartCount, name, styles }) => {
+const ShoppingCartIcon = ({
+  cartCount,
+  name,
+  styles,
+  navBg,
+  setNavBg,
+  bgStyles,
+}) => {
   const showCartCount = () => {
     if (!cartCount) {
       return `(0)`;
@@ -16,7 +23,11 @@ const ShoppingCartIcon = ({ cartCount, name, styles }) => {
   };
 
   return (
-    <div className={styles}>
+    <div
+      className={`${styles} ${navBg ? bgStyles : ""}`}
+      title="Carrito | checkout"
+      onClick={() => setNavBg((prev) => !prev)}
+    >
       <Basket />
       <div className="text">
         {` ${name} `}
@@ -25,9 +36,6 @@ const ShoppingCartIcon = ({ cartCount, name, styles }) => {
       <style jsx>{`
         .text {
           margin-left: 0.5rem;
-        }
-        .text span {
-          font-size: smaller;
         }
       `}</style>
     </div>

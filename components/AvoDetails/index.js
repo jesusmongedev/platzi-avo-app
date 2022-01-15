@@ -67,29 +67,35 @@ const AvoDetails = ({ product }) => {
   return (
     <Layout>
       <main className={styles.avoDetailContainer}>
-        <Image src={product?.image} width={288} height={288} />
-        <h2>{product?.name}</h2>
-        <p className={styles.avoPrice}>$ {product?.price}</p>
-        <span className={styles.avoBarCode}>SKU: {product?.sku}</span>
-        <form>
-          <Input
-            type="number"
-            placeholder="Quantity"
-            value={quantity}
-            min={1}
-            step={1}
-            error={!!error}
-            onChange={handleChange}
-            action={{
-              color: "green",
-              content: "Add to Cart",
-              Icon: "plus cart",
-              onClick: handleAddAvo,
-              loading,
-              disabled: loading,
-            }}
-          />
-        </form>
+        <section className={styles.avoDetailSection}>
+          <div>
+            <Image src={product?.image} width={288} height={288} />
+          </div>
+          <div>
+            <h2>{product?.name}</h2>
+            <p className={styles.avoPrice}>$ {product?.price}</p>
+            <span className={styles.avoBarCode}>SKU: {product?.sku}</span>
+            <form>
+              <Input
+                type="number"
+                placeholder="Quantity"
+                value={quantity}
+                min={1}
+                step={1}
+                error={!!error}
+                onChange={handleChange}
+                action={{
+                  color: "green",
+                  content: "Add to Cart",
+                  Icon: "plus cart",
+                  onClick: handleAddAvo,
+                  loading,
+                  disabled: loading,
+                }}
+              />
+            </form>
+          </div>
+        </section>
         {error && (
           <div style={{ color: "red", position: "absolute" }}>{error}</div>
         )}

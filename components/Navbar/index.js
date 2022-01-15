@@ -5,8 +5,10 @@ import { Menu } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { Avocado } from "@components/SVGIcons";
 import { useCart } from "@store/Cart";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [navBg, setNavBg] = useState(false);
   const { count: cartCount } = useCart();
   const { pathname } = useRouter();
 
@@ -14,7 +16,7 @@ const Navbar = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/" passHref>
-          <div className={styles.home}>
+          <div className={styles.home} title="Inicio | Todos los productos">
             <Avocado />
             <a> Avo Store</a>
           </div>
@@ -23,8 +25,11 @@ const Navbar = () => {
         <Link href="/cart" passHref>
           <Menu.Item active={pathname === "/cart"}>
             <ShoppingCartIcon
+              navBg={navBg}
+              setNavBg={setNavBg}
               cartCount={cartCount}
               name="Canasta"
+              bgStyles={styles.basketActive}
               styles={styles.basket}
             />
           </Menu.Item>

@@ -1,6 +1,17 @@
 .avoDetailContainer {
   padding: 0 14px;
 }
+.avoDetailSection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 600px) {
+  .avoDetailSection {
+    align-items: center;
+    gap: 0.5em;
+  }
+}
 .avoPrice {
   margin-bottom: 0;
 }
