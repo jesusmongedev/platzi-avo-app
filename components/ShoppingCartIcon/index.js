@@ -1,13 +1,7 @@
 import { Basket } from "@components/SVGIcons";
+import styles from "@components/ShoppingCartIcon/styles.module.css";
 
-const ShoppingCartIcon = ({
-  cartCount,
-  name,
-  styles,
-  navBg,
-  setNavBg,
-  bgStyles,
-}) => {
+const ShoppingCartIcon = ({ cartCount, name }) => {
   const showCartCount = () => {
     if (!cartCount) {
       return `(0)`;
@@ -23,13 +17,9 @@ const ShoppingCartIcon = ({
   };
 
   return (
-    <div
-      className={`${styles} ${navBg ? bgStyles : ""}`}
-      title="Carrito | checkout"
-      onClick={() => setNavBg((prev) => !prev)}
-    >
+    <div className={styles.container} title="Carrito | checkout">
       <Basket />
-      <div className="text">
+      <div className={styles.text}>
         {` ${name} `}
         {showCartCount()}
       </div>

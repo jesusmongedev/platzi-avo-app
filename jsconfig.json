@@ -4,7 +4,7 @@
       "paths": {
           "@database": [ "database/db.js" ],
           "@components/*": [ "components/*" ],
-          "@store/*": [ "store/*" ]
+          "@store/*": [ "store/*" ],
       }
     }
   }

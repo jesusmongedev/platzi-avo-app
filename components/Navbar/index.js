@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { Menu, Container } from "semantic-ui-react";
+
 import styles from "@components/Navbar/style.module.css";
 import ShoppingCartIcon from "@components/ShoppingCartIcon";
-import { Menu } from "semantic-ui-react";
-import { useRouter } from "next/router";
 import { Avocado } from "@components/SVGIcons";
 import { useCart } from "@store/Cart";
-import { useState } from "react";
 
 const Navbar = () => {
   const [navBg, setNavBg] = useState(false);
@@ -13,29 +14,27 @@ const Navbar = () => {
   const { pathname } = useRouter();
 
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
+    <Menu size="huge" borderless pointing as="header">
+      <Container text>
         <Link href="/" passHref>
-          <div className={styles.home} title="Inicio | Todos los productos">
+          <Menu.Item
+            active={pathname === "/"}
+            title="Inicio | Todos los productos"
+          >
             <Avocado />
-            <a> Avo Store</a>
-          </div>
-        </Link>
-
-        <Link href="/cart" passHref>
-          <Menu.Item active={pathname === "/cart"}>
-            <ShoppingCartIcon
-              navBg={navBg}
-              setNavBg={setNavBg}
-              cartCount={cartCount}
-              name="Canasta"
-              bgStyles={styles.basketActive}
-              styles={styles.basket}
-            />
+            Avo Store
           </Menu.Item>
         </Link>
-      </nav>
-    </header>
+
+        <Menu.Menu position="right">
+          <Link href="/cart" passHref>
+            <Menu.Item active={pathname === "/cart"}>
+              <ShoppingCartIcon cartCount={cartCount} name="Canasta" />
+            </Menu.Item>
+          </Link>
+        </Menu.Menu>
+      </Container>
+    </Menu>
   );
 };
 
