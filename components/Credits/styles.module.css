@@ -1,6 +1,9 @@
 .creditContainer {
-  font-size: 12px;
+  font-size: 1rem;
   text-align: center;
+  line-height: 1rem;
+  padding: 0 14px;
+  padding-bottom: 50px;
 }
 .small {
   display: block;

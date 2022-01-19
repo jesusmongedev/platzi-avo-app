@@ -1,6 +1,6 @@
 .footer {
-  margin: 42px 0;
-  padding: 56px 14px 0 14px;
+  margin: 26px 0;
+  padding: 30px 14px 0 14px;
   border-top: 1px solid #f2f2f2;
 }
 .links {
@@ -9,6 +9,25 @@
 .links h4 {
   margin-top: 0;
 }
-.social {
-  display: inline-block;
+.social,
+.icons {
+  display: flex;
+}
+.icons {
+  margin-right: 0.75em;
+}
+.icons i {
+  font-size: 1.25em;
+}
+
+@media screen and (min-width: 45em) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 42px 0 25px;
+    padding: 56px 0 0;
+  }
+  .links {
+    padding: 0;
+  }
 }
