@@ -1,9 +1,8 @@
-import React from "react";
-import styles from "./styles.module.css";
+import React from 'react'
+import styles from './styles.module.css'
 
 const AvoAttribute = ({ avoAttributes }) => {
-  const { shape, hardiness, taste } = avoAttributes.attributes;
-  // console.log(avoAttributes);
+  const { shape, hardiness, taste } = avoAttributes.attributes
   return (
     <div className={styles.attributesContainer}>
       <div className={styles.borderBottom}>
@@ -22,7 +21,7 @@ const AvoAttribute = ({ avoAttributes }) => {
         <span>{taste}</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AvoAttribute;
+export default AvoAttribute

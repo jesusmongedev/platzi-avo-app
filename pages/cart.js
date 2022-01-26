@@ -1,15 +1,13 @@
-import Head from "next/head";
-import { Divider } from "semantic-ui-react";
-import Layout from "@components/Layout";
-import CartSummary from "@components/CartSummary";
-import CartItemList from "@components/CartItemList";
-import { useCart, useCartMutations } from "@store/Cart";
+import Head from 'next/head'
+import { Divider } from 'semantic-ui-react'
+import Layout from '@components/Layout'
+import CartSummary from '@components/CartSummary'
+import CartItemList from '@components/CartItemList'
+import { useCart, useCartMutations } from '@store/Cart'
 
 const CartPage = () => {
-  const { items, count } = useCart();
-  const { removeFromCart } = useCartMutations();
-
-  console.log(items);
+  const { items, count } = useCart()
+  const { removeFromCart } = useCartMutations()
 
   return (
     <Layout>
@@ -28,7 +26,7 @@ const CartPage = () => {
         }
       `}</style>
     </Layout>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage

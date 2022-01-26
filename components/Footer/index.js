@@ -1,7 +1,7 @@
-import Credits from "@components/Credits";
-import React from "react";
-import { List } from "semantic-ui-react";
-import styles from "./styles.module.css";
+import Credits from '@components/Credits'
+import React from 'react'
+import { List } from 'semantic-ui-react'
+import styles from './styles.module.css'
 
 const Footer = () => {
   return (
@@ -17,10 +17,16 @@ const Footer = () => {
         </div>
         <div className={styles.links}>
           <h4>Hecho con 💚</h4>
-          <a href="#">@JMongeDev</a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/jesusandresmonge/?locale=en_US"
+          >
+            @JMongeDev
+          </a>
 
           <p>
-            Platzi y su curso de <a href="#">Next.JS</a> de Platzi dictado por{" "}
+            Platzi y su curso de <a href="#">Next.JS</a> de Platzi dictado por{' '}
             <a href="#">@jonalvarezz</a>
           </p>
           <div className={styles.social}>
@@ -41,7 +47,7 @@ const Footer = () => {
       </footer>
       <Credits />
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
