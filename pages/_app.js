@@ -1,6 +1,6 @@
-import "../css/normalize.css";
-import "semantic-ui-css/semantic.min.css";
-import CartProvider from "@store/Cart";
+import '../css/normalize.css'
+import 'semantic-ui-css/semantic.min.css'
+import CartProvider from '@store/Cart'
 
 function MyApp({ Component, pageProps }) {
   //.Casos de uso
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <CartProvider>
       <Component {...pageProps} />
     </CartProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

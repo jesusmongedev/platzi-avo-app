@@ -6,6 +6,11 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 375px) {
+  .avoDetailContainer .avoDetailSection div > input {
+    padding: 0;
+  }
+}
 @media screen and (min-width: 600px) {
   .avoDetailSection {
     align-items: center;
