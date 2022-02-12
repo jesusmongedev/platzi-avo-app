@@ -1,6 +1,5 @@
-import styles from "@components/Header/style.module.css";
-import { Avocado } from "@components/SVGIcons";
-// import { PosMeMuero } from "@components/SVGIcons";
+import styles from '@components/Header/style.module.css'
+import { Avocado } from '@components/SVGIcons'
 
 const Header = () => {
   return (
@@ -12,7 +11,7 @@ const Header = () => {
       </h1>
       <a href="#">¿Debería comer un avo hoy?</a>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

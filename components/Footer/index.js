@@ -26,19 +26,49 @@ const Footer = () => {
           </a>
 
           <p>
-            Platzi y su curso de <a href="#">Next.JS</a> de Platzi dictado por{' '}
-            <a href="#">@jonalvarezz</a>
+            Platzi y su curso de{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://platzi.com/cursos/next/"
+            >
+              Next.JS
+            </a>{' '}
+            de Platzi dictado por{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/jonalvarezz"
+            >
+              @jonalvarezz
+            </a>
           </p>
           <div className={styles.social}>
             <List.Item
               icon="twitter"
               className={styles.icons}
-              content={<a href="#">Twitter</a>}
+              content={
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://twitter.com/jmongedev"
+                >
+                  Twitter
+                </a>
+              }
             />
             <List.Item
               icon="github"
               className={styles.icons}
-              content={<a href="#">Github</a>}
+              content={
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/jesusmongedev"
+                >
+                  Github
+                </a>
+              }
             />
             {/* <p className={styles.social}>🕊️ Twitter</p>
             <p className={styles.social}>🐈‍⬛ GitHub</p> */}
