@@ -3,20 +3,20 @@ import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import Layout from '@components/Layout'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { server } from '../config'
 
-const Home = () => {
-  const [productList, setProductList] = useState([])
+export const getStaticProps = async () => {
+  const res = await fetch(`${server}/api/avo`)
+  const { data: productList } = await res.json()
 
-  useEffect(() => {
-    window
-      .fetch('/api/avo')
-      .then((res) => res.json())
-      .then(({ data }) => {
-        setProductList(data)
-      })
-  }, [])
+  return {
+    props: {
+      productList,
+    },
+  }
+}
 
+const Home = ({ productList }) => {
   return (
     <Layout>
       <Head>

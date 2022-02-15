@@ -1,25 +1,38 @@
-import { useState, useEffect } from 'react/cjs/react.development'
-import { useRouter } from 'next/router'
 import AvoDetails from '@components/AvoDetails'
+import { server } from 'config'
 
-const ProductPage = () => {
-  const [product, setProduct] = useState()
+export const getStaticPaths = async () => {
+  const res = await fetch(`${server}/api/avo`)
+  const { data: productList } = await res.json()
 
-  const {
-    query: { id },
-  } = useRouter([])
+  const paths = productList.map(({ id }) => ({
+    params: {
+      id,
+    },
+  }))
 
-  useEffect(() => {
-    id &&
-      window
-        .fetch(`/api/avo/${id}`)
-        .then((response) => response.json())
-        .then(({ data }) => {
-          setProduct(data)
-        })
-        .catch((err) => console.log(err.message))
-  }, [id])
+  return {
+    paths,
+    // Incremental static generation
+    // 404 for everything else
+    fallback: false,
+  }
+}
 
+export const getStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `https://platzi-avocados.vercel.app/api/avo/${params.id}`
+  )
+  const product = await res.json()
+
+  return {
+    props: {
+      product,
+    },
+  }
+}
+
+const ProductPage = ({ product }) => {
   return <>{product && <AvoDetails product={product} />}</>
 }
 
