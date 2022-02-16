@@ -20,10 +20,8 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const res = await fetch(
-    `https://platzi-avocados.vercel.app/api/avo/${params.id}`
-  )
-  const product = await res.json()
+  const res = await fetch(`${server}/api/avo/${params.id}`)
+  const { data: product } = await res.json()
 
   return {
     props: {

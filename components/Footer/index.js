@@ -70,8 +70,6 @@ const Footer = () => {
                 </a>
               }
             />
-            {/* <p className={styles.social}>🕊️ Twitter</p>
-            <p className={styles.social}>🐈‍⬛ GitHub</p> */}
           </div>
         </div>
       </footer>
