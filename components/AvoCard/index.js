@@ -8,7 +8,12 @@ const AvoCard = ({ avos }) => {
       {avos?.map((product) => (
         <Link key={product.id} href={`/product/${product.id}`} passHref>
           <div className={styles.avoCard}>
-            <Image src={product?.image} width={288} height={288} />
+            <Image
+              src={product?.image}
+              width={288}
+              height={288}
+              alt={product?.name}
+            />
             <div className={styles.avoInfo}>
               <h2>{product?.name}</h2>
               <p>$ {product?.price}</p>

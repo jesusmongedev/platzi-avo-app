@@ -1,9 +1,8 @@
-import Link from "next/link";
-import React from "react";
-import { Item, Button, Loader, Message } from "semantic-ui-react";
+import Link from 'next/link'
+import { Item, Button, Loader, Message } from 'semantic-ui-react'
 
 const CartItemList = ({ items, removeFromCart, loading = false }) => {
-  if (loading) return <Loader active inline="centered" />;
+  if (loading) return <Loader active inline="centered" />
 
   if (items.length === 0)
     return (
@@ -13,11 +12,11 @@ const CartItemList = ({ items, removeFromCart, loading = false }) => {
           You will need to add some items to the cart before you can checkout.
         </p>
       </Message>
-    );
+    )
 
   const mapCartItemsToItems = (items) =>
     items.map((cartItem) => {
-      const { id, name, quantity, price, image } = cartItem;
+      const { id, name, quantity, price, image } = cartItem
 
       return {
         childKey: id,
@@ -33,11 +32,11 @@ const CartItemList = ({ items, removeFromCart, loading = false }) => {
             src={image}
             alt={name}
             size="small"
-            style={{ background: "#f2f2f2" }}
+            style={{ background: '#f2f2f2' }}
           />
         ),
         meta: `${quantity} x ${price}`,
-        description: "Some more information goes here....",
+        description: 'Some more information goes here....',
         extra: (
           <Button
             basic
@@ -46,10 +45,10 @@ const CartItemList = ({ items, removeFromCart, loading = false }) => {
             onClick={() => removeFromCart(cartItem)}
           />
         ),
-      };
-    });
+      }
+    })
 
-  return <Item.Group divided items={mapCartItemsToItems(items)} as="section" />;
-};
+  return <Item.Group divided items={mapCartItemsToItems(items)} as="section" />
+}
 
-export default CartItemList;
+export default CartItemList

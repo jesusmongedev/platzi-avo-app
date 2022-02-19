@@ -350,3 +350,7 @@ template {
 [hidden] {
   display: none;
 }
+
+a {
+  color: #70757a !important;
+}

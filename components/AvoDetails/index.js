@@ -72,7 +72,12 @@ const AvoDetails = ({ product }) => {
         <main className={styles.avoDetailContainer}>
           <section className={styles.avoDetailSection}>
             <div>
-              <Image src={product?.image} width={288} height={288} />
+              <Image
+                src={product?.image}
+                width={288}
+                height={288}
+                alt={product?.name}
+              />
             </div>
             <div>
               <h2>{product?.name}</h2>

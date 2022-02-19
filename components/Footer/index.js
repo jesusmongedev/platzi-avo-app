@@ -43,7 +43,7 @@ const Footer = () => {
               @jonalvarezz
             </a>
           </p>
-          <div className={styles.social}>
+          <div className={styles.social} role="tablist">
             <List.Item
               icon="twitter"
               className={styles.icons}
@@ -52,6 +52,10 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://twitter.com/jmongedev"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="tab-1-pane"
+                  active
                 >
                   Twitter
                 </a>
@@ -65,6 +69,9 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/jesusmongedev"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="tab-2-pane"
                 >
                   Github
                 </a>
