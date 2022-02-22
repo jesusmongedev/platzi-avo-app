@@ -21,8 +21,6 @@ const validate = (quantity) => {
 }
 
 const AvoDetails = ({ product }) => {
-  console.log(product)
-  console.log(product.attributes)
   const [quantity, setQuantity] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')

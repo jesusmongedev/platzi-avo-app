@@ -40,7 +40,7 @@ const YesOrNo = ({ initialResult }) => {
   return (
     <Layout>
       <div>
-        <Header as="h1" color={isLoading ? 'grey' : 'green'}>
+        <Header as="h1" color={isLoading ? 'grey' : 'grey'}>
           {result}
         </Header>
         <p>
@@ -49,6 +49,7 @@ const YesOrNo = ({ initialResult }) => {
             onClick={onClick}
             loading={isLoading}
             disabled={isLoading}
+            className="create-new-btn"
           >
             Intentar de nuevo
           </Button>

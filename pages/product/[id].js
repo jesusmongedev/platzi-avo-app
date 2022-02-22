@@ -1,5 +1,7 @@
 import AvoDetails from '@components/AvoDetails'
 import { server } from 'config'
+import Layout from '@components/Layout'
+import Head from 'next/head'
 
 export const getStaticPaths = async () => {
   const res = await fetch(`${server}/api/avo`)
@@ -31,7 +33,15 @@ export const getStaticProps = async ({ params }) => {
 }
 
 const ProductPage = ({ product }) => {
-  return <>{product && <AvoDetails product={product} />}</>
+  return (
+    <>
+      {' '}
+      <Head>
+        <title>Avo Details</title>
+      </Head>
+      {product && <AvoDetails product={product} />}
+    </>
+  )
 }
 
 export default ProductPage

@@ -20,7 +20,7 @@ const Home = ({ productList }) => {
   return (
     <Layout>
       <Head>
-        <title>Platzi-Avo 🥑</title>
+        <title>Platzi Avo</title>
       </Head>
       <KawaiiHeader />
       <section>

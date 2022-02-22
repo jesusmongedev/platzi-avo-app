@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Item, Button, Loader, Message } from 'semantic-ui-react'
 
 const CartItemList = ({ items, removeFromCart, loading = false }) => {
-  if (loading) return <Loader active inline="centered" />
+  loading && <Loader active inline="centered" />
 
   if (items.length === 0)
     return (
